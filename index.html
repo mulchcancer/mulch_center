@@ -60,9 +60,9 @@
   <header class="top-header" id="Parent_Scroll_Div">
     <nav class="navbar navbar-expand-xl align-items-center gap-3 container px-4 px-lg-0">
       <div>
-	   <a href="index.html" class="logo-header d-none d-xl-flex align-items-center gap-2">
+	   <a href="/index.html" class="logo-header d-none d-xl-flex align-items-center gap-2">
 		<div class="logo-icon">
-		   <img src="assets/favicon/web-app-manifest-192x192.png" class="logo-img" width="45" alt="">
+		   <img src="/assets/favicon/web-app-manifest-192x192.png" class="logo-img" width="45" alt="Mulch Cancer Awareness">
 		</div>
 		<div class="logo-name">
 		  <h5 class="mb-0">Mulch Cancer</h5>
@@ -131,14 +131,13 @@
                 <div class="menu-title">Contact</div>
               </a>
             </li>
-
-            <li class="nav-item dropdown d-none d-xxl-block">
-              <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown" id="pagesDropdown" role="button" aria-expanded="false">
                 <div class="parent-icon"><i class='material-icons-outlined'>task</i>
                 </div>
                 <div class="menu-title">Pages</div>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" aria-labelledby="pagesDropdown" aria-labelledby="pagesDropdown">
                 <li><a class="dropdown-item" href="/assets/page/mulch_center_audit.html"><i
                     class='material-icons-outlined'>checklist</i>Audit Checklist</a></li>
                 <li><a class="dropdown-item" href="/assets/page/mulch_center_Fugitive_Emissions.html"><i class='material-icons-outlined'>cloud_off</i>Fugitive Emissions</a></li>
@@ -152,7 +151,6 @@
                     class='material-icons-outlined'>construction</i>Practical Controls</a></li>
                 <li><a class="dropdown-item" href="/assets/page/mulch_center_references.html"><i
                     class='material-icons-outlined'>menu_book</i>References</a></li>
-                
               </ul>
             </li>
           </ul>
@@ -176,11 +174,11 @@
               <h3 class="fw-bold mb-3 banner-heading">Neighbors can be exposed to carcinogenic wood dust from mulch centers, as handling and processing organic materials like wood chips releases fine dust into the air.</h3>
               <h5 class="mb-0 banner-paragraph">Wood dust is classified as a Group 1 carcinogen by the International Agency for Research on Cancer (IARC), linked primarily to cancers of the nasal cavity and paranasal sinuses. </h5>
               <div class="d-flex flex-column flex-lg-row align-items-center gap-3 mt-5">
-                <a href="javascript:;"
+                <a href="/assets/page/mulch_center_wood_dust_carcinogenicity.html"
                   class="btn btn-lg btn-grd btn-grd-primary d-flex align-items-center rounded-5 gap-2 raised">
                   <i class="material-icons-outlined">speed</i>Get Started
                 </a>
-                <a href="javascript:;" class="btn btn-lg btn-light d-flex align-items-center rounded-5 gap-2 raised">
+                <a href="/index.html#mulch_center_pollution" class="btn btn-lg btn-light d-flex align-items-center rounded-5 gap-2 raised">
                   <i class="material-icons-outlined">play_circle_outline</i>Watch Video
                 </a>
               </div>
@@ -589,7 +587,7 @@
             <div class="col">
               <div class="inner">
                 <a href="/assets/page/mulch_center_references.html" class="glightbox">
-                  <img src="/assets/images/gallery/mulch_center_polluting_neighborhood.webp" class="img-fluid rounded-4 p-1 bg-grd-success"
+                  <img src="/assets/images/gallery/mulch_center_sinuadeno.webp" class="img-fluid rounded-4 p-1 bg-grd-success"
                     alt="Wood Dust Being Released into the neighborhoods">
                 </a>
               </div>
@@ -630,7 +628,7 @@
         <div class="col">
               <div class="inner">
                 <a href="/assets/page/mulch_center_Fugitive_Emissions.html" class="glightbox">
-                  <div class="ratio ratio-16x9 d-flex justify-content-center my-4">
+                  <div id="mulch_center_pollution" class="ratio ratio-16x9 d-flex justify-content-center my-4">
                       <video class="img-fluid rounded" autoplay="" loop="" muted="" playsinline="" preload="auto">
                           <source src="/assets/images/video/mulch_center_pollution480p_500kbps.mp4" type="video/webm">
                           Your browser does not support videos
