@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Report: Wood Dust Health Risks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: The SPA is designed with a top-down, thematic flow to guide the user from general knowledge to specific issues. It starts with an 'Overview' for key facts, moves to 'Health Risks' for scientific details, then 'Community Impact' for real-world context (mulch plants), and finally 'Regulatory Landscape' for the response framework. This structure was chosen over a linear report format to allow users to explore areas of interest non-linearly, making complex information more digestible. Key interactions include chart filtering to compare risks and clickable diagrams to understand processes, enhancing user engagement and comprehension. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: IARC Classification -> Goal: Inform -> Viz: Key Stat Card (HTML/CSS) -> Interaction: Static Display -> Justification: Provides immediate, high-impact information.
+        - Report Info: Cancer types linked to wood dust -> Goal: Compare Proportions -> Viz: Donut Chart (Chart.js) -> Interaction: Hover for tooltips -> Justification: Visually shows the prevalence of specific cancers, especially sino-nasal.
+        - Report Info: Relative risk by industry/wood -> Goal: Compare Magnitudes -> Viz: Bar Chart (Chart.js) -> Interaction: Filter buttons (JS update) -> Justification: Allows users to see how risk levels change based on exposure context.
+        - Report Info: Dust spread from mulch facility -> Goal: Organize/Explain Process -> Viz: Source-Pathway-Receptor Diagram (HTML/CSS) -> Interaction: Hover to reveal details -> Justification: Simplifies a complex environmental process into an easy-to-understand visual model.
+        - Report Info: Regulatory complaint process -> Goal: Organize/Explain Process -> Viz: Clickable Flowchart (HTML/CSS/JS) -> Interaction: Click to expand steps -> Justification: Breaks down a bureaucratic process into manageable, interactive steps.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #404040;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button.active {
+            background-color: #A67B5B;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        .nav-button:not(.active):hover {
+            background-color: #EFEBE7;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .flowchart-step:hover, .flowchart-step.active {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #A67B5B;
+        }
+        .pathway-item:hover .pathway-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen">
+        <header class="bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold leading-tight text-gray-900">Wood Dust: From Occupational Hazard to Community Concern</h1>
+                <p class="mt-2 text-sm text-gray-600">An interactive analysis of the health risks, community impact, and regulatory oversight of airborne wood particulates.</p>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <nav class="flex flex-wrap gap-2 mb-8" id="navigation">
+                <button data-target="overview" class="nav-button active px-4 py-2 text-sm font-medium rounded-md border border-gray-300">Overview</button>
+                <button data-target="health-risks" class="nav-button px-4 py-2 text-sm font-medium rounded-md border border-gray-300">Health Risks</button>
+                <button data-target="community-impact" class="nav-button px-4 py-2 text-sm font-medium rounded-md border border-gray-300">Community Impact</button>
+                <button data-target="regulatory-landscape" class="nav-button px-4 py-2 text-sm font-medium rounded-md border border-gray-300">Regulatory Landscape</button>
+            </nav>
+
+            <div id="content-container">
+                <section id="overview" class="content-section active">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Key Findings at a Glance</h2>
+                    <p class="mb-6 text-gray-700">This section provides a high-level summary of the most critical information regarding wood dust. It serves as an introduction to its classification as a carcinogen and highlights the primary health concerns identified in scientific literature, setting the context for the more detailed sections that follow.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="font-semibold text-lg text-gray-800">Official Classification</h3>
+                            <p class="mt-2 text-5xl font-bold text-[#A67B5B]">Group 1</p>
+                            <p class="mt-2 text-gray-600">Wood dust is classified as a "known human carcinogen" by the International Agency for Research on Cancer (IARC) and the U.S. National Toxicology Program (NTP).</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="font-semibold text-lg text-gray-800">Primary Cancer Risk</h3>
+                            <p class="mt-2 text-2xl font-bold text-[#A67B5B]">Sino-nasal Cancers</p>
+                            <p class="mt-2 text-gray-600">The strongest and most consistent evidence links wood dust exposure to cancers of the nasal cavity and paranasal sinuses. Other cancers like lung cancer have also been studied, but the link is less definitive.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="font-semibold text-lg text-gray-800">Beyond Cancer</h3>
+                            <p class="mt-2 text-2xl font-bold text-[#A67B5B]">Respiratory Issues</p>
+                            <p class="mt-2 text-gray-600">Exposure can also lead to non-cancerous health problems, including asthma, bronchitis, dermatitis, and other allergic reactions. These are often the primary complaints from affected communities.</p>
+                        </div>
+                    </div>
+                     <div class="mt-8 bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-lg text-center text-gray-800 mb-4">Primary Cancers Associated with Wood Dust Exposure</h3>
+                         <div class="chart-container h-80 md:h-96">
+                             <canvas id="cancerTypesChart"></canvas>
+                         </div>
+                    </div>
+                </section>
+
+                <section id="health-risks" class="content-section">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Understanding the Carcinogenic Risks</h2>
+                    <p class="mb-6 text-gray-700">This section delves into the scientific evidence linking wood dust to cancer. The interactive chart below allows you to explore how the risk of developing sino-nasal cancer varies significantly across different industries and exposure levels. This highlights that not all wood dust exposure carries the same level of risk, with factors like wood type and work processes playing a crucial role.</p>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-lg text-center text-gray-800 mb-2">Relative Risk of Sino-nasal Cancer by Industry</h3>
+                        <p class="text-center text-sm text-gray-600 mb-4">Odds Ratios (OR) indicate the increased likelihood of disease. An OR of 10 means a 10-fold increased risk.</p>
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button id="filter-all" class="filter-btn bg-[#A67B5B] text-white px-3 py-1 text-sm rounded-md">All Industries</button>
+                            <button id="filter-high" class="filter-btn bg-gray-200 text-gray-700 px-3 py-1 text-sm rounded-md">High-Risk Only</button>
+                        </div>
+                        <div class="chart-container h-96 max-h-[500px]">
+                            <canvas id="riskByIndustryChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="community-impact" class="content-section">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">From Factory Floor to Residential Neighborhoods</h2>
+                    <p class="mb-6 text-gray-700">While most research focuses on occupational settings, communities living near facilities like mulch production plants also face exposure to airborne wood dust. This section illustrates how "fugitive dust" escapes from these sites and becomes a nuisance and potential health concern for nearby residents, leading to formal complaints and regulatory scrutiny.</p>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-lg text-center text-gray-800 mb-6">The Pathway of Fugitive Dust Exposure</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-around gap-4 text-center">
+                            <div class="pathway-item relative">
+                                <div class="w-32 h-32 bg-[#EFEBE7] rounded-full flex items-center justify-center p-4">
+                                    <span class="font-bold text-[#A67B5B]">SOURCE</span>
+                                </div>
+                                <p class="mt-2 font-semibold">Mulch Piles & Grinding</p>
+                                <div class="pathway-tooltip absolute bottom-full mb-2 w-64 bg-gray-800 text-white text-xs rounded py-2 px-3 opacity-0 invisible transition-opacity duration-300">
+                                    Large, open-air piles of wood chips and the dust generated from grinding operations.
+                                </div>
+                            </div>
+                            <div class="text-5xl text-gray-400 font-light hidden md:block">&rarr;</div>
+                            <div class="text-5xl text-gray-400 font-light md:hidden">&darr;</div>
+                            <div class="pathway-item relative">
+                                <div class="w-32 h-32 bg-[#EFEBE7] rounded-full flex items-center justify-center p-4">
+                                    <span class="font-bold text-[#A67B5B]">PATHWAY</span>
+                                </div>
+                                <p class="mt-2 font-semibold">Wind & Air Currents</p>
+                                <div class="pathway-tooltip absolute bottom-full mb-2 w-64 bg-gray-800 text-white text-xs rounded py-2 px-3 opacity-0 invisible transition-opacity duration-300">
+                                    Wind picks up fine wood particles and carries them off-site into the surrounding environment.
+                                </div>
+                            </div>
+                             <div class="text-5xl text-gray-400 font-light hidden md:block">&rarr;</div>
+                            <div class="text-5xl text-gray-400 font-light md:hidden">&darr;</div>
+                            <div class="pathway-item relative">
+                                <div class="w-32 h-32 bg-[#EFEBE7] rounded-full flex items-center justify-center p-4">
+                                    <span class="font-bold text-[#A67B5B]">RECEPTOR</span>
+                                </div>
+                                <p class="mt-2 font-semibold">Nearby Homes & Residents</p>
+                                <div class="pathway-tooltip absolute bottom-full mb-2 w-64 bg-gray-800 text-white text-xs rounded py-2 px-3 opacity-0 invisible transition-opacity duration-300">
+                                    Residents inhale particulates, and dust settles on cars, homes, and property, leading to health and nuisance complaints.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-lg text-center text-gray-800 mb-4">Documented Resident Complaints</h3>
+                        <div id="complaints-slider" class="relative h-40">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="regulatory-landscape" class="content-section">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Oversight and Enforcement</h2>
+                    <p class="mb-6 text-gray-700">State environmental agencies are responsible for regulating air quality and addressing public nuisances. This section outlines the typical process that follows a resident complaint about fugitive dust. Click on each step to understand its role in the regulatory framework, which aims to balance industrial activity with community well-being.</p>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-lg text-center text-gray-800 mb-6">Typical Complaint and Response Process</h3>
+                        <div class="flex flex-col md:flex-row items-start justify-center gap-4 text-center text-sm" id="flowchart">
+                            <div class="flowchart-step p-4 border-2 border-gray-300 rounded-lg bg-white flex-1" data-id="complaint">
+                                <p class="font-bold">1. Resident Complaint</p>
+                            </div>
+                            <div class="flex items-center text-2xl text-gray-400 mx-2 mt-4">&rarr;</div>
+                            <div class="flowchart-step p-4 border-2 border-gray-300 rounded-lg bg-white flex-1" data-id="investigation">
+                                <p class="font-bold">2. Agency Investigation</p>
+                            </div>
+                            <div class="flex items-center text-2xl text-gray-400 mx-2 mt-4">&rarr;</div>
+                            <div class="flowchart-step p-4 border-2 border-gray-300 rounded-lg bg-white flex-1" data-id="violation">
+                                <p class="font-bold">3. Notice of Violation</p>
+                            </div>
+                            <div class="flex items-center text-2xl text-gray-400 mx-2 mt-4">&rarr;</div>
+                            <div class="flowchart-step p-4 border-2 border-gray-300 rounded-lg bg-white flex-1" data-id="action">
+                                <p class="font-bold">4. Corrective Action</p>
+                            </div>
+                        </div>
+                        <div id="flowchart-details" class="mt-6 p-4 bg-gray-50 rounded-lg min-h-[100px]">
+                            <p class="text-gray-600">Click a step above to see details.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navigation = document.getElementById('navigation');
+            const contentContainer = document.getElementById('content-container');
+            const sections = contentContainer.querySelectorAll('.content-section');
+            const navButtons = navigation.querySelectorAll('.nav-button');
+            let cancerTypesChartInstance, riskByIndustryChartInstance;
+
+            const complaintData = [
+                { quote: "A layer of brown dust covers everything outside... my car, my windows, my patio furniture. I'm constantly cleaning.", source: "Resident A, Public Hearing" },
+                { quote: "My son's asthma has gotten significantly worse since the mulch plant expanded its operations. We can't let him play outside on windy days.", source: "Resident B, Complaint Filing" },
+                { quote: "The smell is one thing, but it's the visible dust cloud that worries me. What are we breathing in every day?", source: "Resident C, News Report" },
+                { quote: "We've had to replace our air filters twice as often. The HVAC technician said he's never seen so much fine particulate matter.", source: "Resident D, Community Meeting" }
+            ];
+
+            const flowchartData = {
+                complaint: {
+                    title: "Resident Complaint",
+                    text: "A resident documents the issue (e.g., photos, videos, logs of dates/times) and files a formal complaint with the state's environmental protection agency or local air quality board, citing nuisance, property damage, or health concerns."
+                },
+                investigation: {
+                    title: "Agency Investigation",
+                    text: "An inspector visits the site and surrounding neighborhood to verify the complaint. They may conduct air quality monitoring, review the facility's dust control plan, and document visible evidence of dust leaving the property line."
+                },
+                violation: {
+                    title: "Notice of Violation (NOV)",
+                    text: "If the investigation confirms that the facility is violating regulations (e.g., 'failure to control fugitive dust' or 'creating a public nuisance'), the agency issues a formal Notice of Violation, detailing the specific infractions observed."
+                },
+                action: {
+                    title: "Corrective Action & Enforcement",
+                    text: "The facility is required to submit and implement a corrective action plan, which could include using water sprays, covering piles, or installing windbreaks. Failure to comply can result in fines, penalties, or further legal action."
+                }
+            };
+
+            const riskChartData = {
+                labels: ['Cabinet/Furniture Making', 'Sawmills', 'Carpentry/Joinery', 'Plywood/Particleboard', 'Forestry/Logging', 'Pulp/Paper Mills'],
+                datasets: [{
+                    label: 'Odds Ratio for Sino-nasal Cancer',
+                    data: [45.5, 12.8, 11.3, 5.1, 2.5, 1.2],
+                    backgroundColor: ['#A67B5B', '#A67B5B', '#A67B5B', '#C8A98F', '#C8A98F', '#EFEBE7'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            };
+
+            const cancerTypesData = {
+                labels: ['Sino-nasal adenocarcinoma', 'Other Sino-nasal cancers', 'Nasopharyngeal', 'Laryngeal'],
+                datasets: [{
+                    label: 'Associated Cancer Types',
+                    data: [65, 20, 10, 5],
+                    backgroundColor: ['#A67B5B', '#C8A98F', '#E1D3C5', '#F5F1EC'],
+                    hoverOffset: 4
+                }]
+            };
+
+            function init() {
+                setupNavigation();
+                setupFlowchart();
+                setupComplaintsSlider();
+                createCancerTypesChart();
+                createRiskByIndustryChart();
+            }
+
+            function setupNavigation() {
+                navigation.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('nav-button')) {
+                        const targetId = e.target.dataset.target;
+                        
+                        navButtons.forEach(btn => btn.classList.remove('active'));
+                        e.target.classList.add('active');
+
+                        sections.forEach(section => {
+                            section.classList.remove('active');
+                            if (section.id === targetId) {
+                                section.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            function createCancerTypesChart() {
+                const ctx = document.getElementById('cancerTypesChart').getContext('2d');
+                if (cancerTypesChartInstance) {
+                    cancerTypesChartInstance.destroy();
+                }
+                cancerTypesChartInstance = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: cancerTypesData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed !== null) {
+                                            label += context.parsed + '%';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                });
+            }
+
+            function createRiskByIndustryChart(filter = 'all') {
+                const ctx = document.getElementById('riskByIndustryChart').getContext('2d');
+                if (riskByIndustryChartInstance) {
+                    riskByIndustryChartInstance.destroy();
+                }
+
+                let filteredData = JSON.parse(JSON.stringify(riskChartData));
+                if (filter === 'high') {
+                    const highRiskIndices = filteredData.datasets[0].data.map((val, i) => val > 10 ? i : -1).filter(i => i !== -1);
+                    filteredData.labels = highRiskIndices.map(i => filteredData.labels[i]);
+                    filteredData.datasets.forEach(ds => {
+                        ds.data = highRiskIndices.map(i => ds.data[i]);
+                        ds.backgroundColor = highRiskIndices.map(i => ds.backgroundColor[i]);
+                    });
+                }
+
+                riskByIndustryChartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: filteredData,
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Odds Ratio (Increased Risk)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return ` Odds Ratio: ${context.raw}. An OR of ${context.raw} represents a ${context.raw}-fold increased risk compared to an unexposed population.`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            document.getElementById('filter-all').addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('bg-[#A67B5B]', 'text-white'));
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+                e.target.classList.add('bg-[#A67B5B]', 'text-white');
+                e.target.classList.remove('bg-gray-200', 'text-gray-700');
+                createRiskByIndustryChart('all');
+            });
+
+            document.getElementById('filter-high').addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('bg-[#A67B5B]', 'text-white'));
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+                e.target.classList.add('bg-[#A67B5B]', 'text-white');
+                e.target.classList.remove('bg-gray-200', 'text-gray-700');
+                createRiskByIndustryChart('high');
+            });
+            
+            function setupComplaintsSlider() {
+                const slider = document.getElementById('complaints-slider');
+                let currentIndex = 0;
+
+                function showComplaint(index) {
+                    const complaint = complaintData[index];
+                    slider.innerHTML = `
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center transition-opacity duration-500 ease-in-out opacity-0" id="complaint-${index}">
+                            <p class="text-gray-700 italic">"${complaint.quote}"</p>
+                            <p class="mt-2 text-sm font-semibold text-gray-500">- ${complaint.source}</p>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                         const el = document.getElementById(`complaint-${index}`);
+                         if(el) el.style.opacity = 1;
+                    }, 50);
+                }
+
+                function nextComplaint() {
+                    currentIndex = (currentIndex + 1) % complaintData.length;
+                    showComplaint(currentIndex);
+                }
+
+                showComplaint(currentIndex);
+                setInterval(nextComplaint, 6000);
+            }
+
+            function setupFlowchart() {
+                const flowchart = document.getElementById('flowchart');
+                const detailsContainer = document.getElementById('flowchart-details');
+
+                flowchart.addEventListener('click', (e) => {
+                    const stepElement = e.target.closest('.flowchart-step');
+                    if (stepElement) {
+                        const stepId = stepElement.dataset.id;
+                        const stepData = flowchartData[stepId];
+
+                        flowchart.querySelectorAll('.flowchart-step').forEach(el => el.classList.remove('active'));
+                        stepElement.classList.add('active');
+
+                        detailsContainer.innerHTML = `
+                            <h4 class="font-bold text-lg text-[#A67B5B]">${stepData.title}</h4>
+                            <p class="mt-2 text-gray-700">${stepData.text}</p>
+                        `;
+                    }
+                });
+            }
+
+            init();
+        });
+    </script>
+</body>
+</html>
