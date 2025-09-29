@@ -5,44 +5,44 @@
     "priority": "1.0"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_audit.html",
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_audit.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_Fugitive_Emissions.html",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-
-  {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_occupational.html",
-    "changefreq": "monthly",
-    "priority": "1.0"
-  },
-  {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_Particulates.html",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_wood_dust_carcinogenicity.html",
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_Fugitive_Emissions.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
 
   {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_wood-dust-summary.html",
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_occupational.html",
     "changefreq": "monthly",
     "priority": "1.0"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_references.html",
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_Particulates.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/mulch_center_research_resources.html",
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_wood_dust_carcinogenicity.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+
+  {
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_wood-dust-summary.html",
+    "changefreq": "monthly",
+    "priority": "1.0"
+  },
+  {
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_references.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_research_resources.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
@@ -52,44 +52,44 @@
     "priority": "1.0"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_audit.html",
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_audit.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_Fugitive_Emissions.html",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-
-  {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_occupational.html",
-    "changefreq": "monthly",
-    "priority": "1.0"
-  },
-  {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_Particulates.html",
-    "changefreq": "weekly",
-    "priority": "0.8"
-  },
-  {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_wood_dust_carcinogenicity.html",
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_Fugitive_Emissions.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
 
   {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_wood-dust-summary.html",
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_occupational.html",
     "changefreq": "monthly",
     "priority": "1.0"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_references.html",
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_Particulates.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
   {
-    "loc": "https://mulchcancer.com/assets/page/es/mulch_center_research_resources.html",
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_wood_dust_carcinogenicity.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+
+  {
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_wood-dust-summary.html",
+    "changefreq": "monthly",
+    "priority": "1.0"
+  },
+  {
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_references.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_research_resources.html",
     "changefreq": "weekly",
     "priority": "0.8"
   }
