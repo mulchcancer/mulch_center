@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood Dust Exposure and Persistent Cancer Risk Report</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9O+KZaX/VzJzJtH+6e7s+8C7lWb8O8O5l3zD3Gf8tI2g5wF3b3Z5c5c" crossorigin="anonymous">
+    <!-- Inter Font -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .report-section {
+            display: none; /* Hide all sections by default */
+            padding-top: 20px;
+        }
+        .navbar {
+            background-color: #343a40 !important; /* Dark background for navbar */
+        }
+        .nav-link.active {
+            font-weight: 700;
+            color: #ffc107 !important; /* Yellow highlight for active link */
+            border-bottom: 3px solid #ffc107;
+        }
+        .card {
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #004d40; /* Dark teal heading color */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar for Navigation (Responsive) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning fw-bold" href="#" onclick="showSection('executive-summary');">Wood Dust Report</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <a class="nav-link" href="#" data-section="executive-summary">I. Summary</a>
+                    <a class="nav-link" href="#" data-section="carcinogenicity">II. Carcinogenicity</a>
+                    <a class="nav-link" href="#" data-section="quantitative-evidence">III. Quantitative Evidence</a>
+                    <a class="nav-link" href="#" data-section="biological-mechanisms">IV. Mechanisms</a>
+                    <a class="nav-link" href="#" data-section="implications">V. Implications</a>
+                    <a class="nav-link" href="#" data-section="conclusion">VI. Conclusion</a>
+                    <a class="nav-link" href="#" data-section="references">VII. References</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+
+                <!-- Section I: Executive Summary -->
+                <div id="executive-summary" class="report-section card p-4">
+                    <h1 class="mb-4">I. Executive Summary</h1>
+                    <p class="lead">This expert report addresses the critical question of whether the heightened carcinogenic risk associated with occupational wood dust exposure dissipates once the exposure ceases. The evidence demonstrates that the increased risk for the most strongly linked malignancy, Sinonasal Adenocarcinoma (AD), does <strong>not</strong> stop immediately; rather, it remains significantly elevated for protracted periods, often spanning decades after the individual is no longer exposed.</p>
+
+                    <p>Wood dust is globally recognized as a definitive human occupational hazard, classified as a Group 1 carcinogen by the International Agency for Research on Cancer (IARC). The persistence of the risk is rooted in the pathology of the resulting disease, which possesses an exceptionally long latency period (averaging 40 years). Epidemiological studies tracking former workers consistently show that the risk for sinonasal adenocarcinoma remains substantially elevated and <strong>does not decrease for at least 15 years following the termination of exposure</strong>. This sustained risk level is directly proportional to the total cumulative exposure (dose and duration) accrued during the working lifetime.</p>
+                </div>
+
+                <!-- Section II: Wood Dust Carcinogenicity -->
+                <div id="carcinogenicity" class="report-section card p-4">
+                    <h1 class="mb-4">II. Wood Dust Carcinogenicity: Classification, Context, and Associated Cancers</h1>
+
+                    <h2 class="mt-4">II.A. Global Classification and Regulatory Status</h2>
+                    <p>Occupational exposure to wood dust is universally acknowledged as a major public health concern. The International Agency for Research on Cancer (IARC) classifies wood dust as <strong>Group 1: Carcinogenic to Humans</strong>. This classification is predominantly based on consistent findings linking exposure to cancers of the nasal cavities and paranasal sinuses. Similarly, the U.S. National Toxicology Program (NTP) identifies wood dust as a <strong>Known Human Carcinogen</strong>.</p>
+                    <p>The strong and consistent carcinogenic associations are focused primarily on the nasal cavity and paranasal sinuses (collectively termed Sinonasal Cancer, SNC). While this association is strongest, pooled analyses have also found evidence suggesting an excess risk for cancers of the nasopharynx and lymphatic and haematopoietic cancers, such as multiple myeloma.</p>
+
+                    <h2 class="mt-4">II.B. Histological Specificity: The Dominance of Adenocarcinoma (AD)</h2>
+                    <p>The persistence and magnitude of the cancer risk are profoundly influenced by the specific histological type of malignancy developed. Sinonasal Adenocarcinoma (AD) is the histotype most intensely and consistently linked to wood dust exposure, especially dust generated from hardwoods. Epidemiological evidence, including meta-analyses, confirms the severity of this association, yielding pooled Relative Risks (RR) as high as 29 to 35 for AD in case-control studies.</p>
+                    <p>In contrast, associations between wood dust and Sinonasal Squamous Cell Carcinoma (SCC) are generally weaker and less consistent across different populations and studies. While risks for SCC are sometimes elevated, they are typically modest, often showing Odds Ratios (OR) ranging from 1.3 to 2.5, which pales in comparison to the extreme elevation observed for AD.</p>
+
+                    <h2 class="mt-4">II.C. Differential Potency: Hardwood versus Softwood Exposure</h2>
+                    <p>The distinction between hardwood and softwood exposure is vital for risk assessment. There is compelling evidence linking AD specifically to exposure to hardwood dusts, such as oak, beech, and mahogany. Notably, the strongest epidemiological associations involving AD have been observed in occupations where workers were exposed to hardwood dust without the use of chemical additives. This suggests that intrinsic components of the hardwood itself, in conjunction with its particulate nature, are potent drivers of AD carcinogenesis.</p>
+                    <p>Exposure to softwood dusts presents a different risk profile. While some studies suggest an elevated risk, the magnitude is substantially smaller than that associated with hardwoods. Any association with softwoods is generally linked to SCC rather than AD. Because of this profound difference in risk magnitude based on wood species, there is a clear imperative for regulatory and medical approaches to differentiate based on the specific type of exposure encountered. Treating all wood dust exposure as a uniform hazard fails to acknowledge the highly variable risk profile based on wood species and histology (AD vs. SCC). This recognition allows for targeted, efficient allocation of resources toward prevention and medical surveillance in cohorts known to have worked extensively with high-risk hardwoods, such as those in furniture and cabinet-making.</p>
+                    <p>Furthermore, it is important to consider the evolving hazard landscape. Historically, high-risk cohorts were primarily exposed to pure hardwood dust. However, modern woodworking frequently involves engineered wood products (e.g., MDF, particleboard) that release not only wood dust but also formaldehyde, which is independently classified as a Group 1 carcinogen. Although the strongest AD association remains tied to pure wood dust, the cumulative effect of simultaneous exposure to two potent IARC Group 1 agents may modify the overall risk profile or potentially accelerate the latent period for other associated cancers, such as those of the nasopharynx or lung. Future risk modeling for current and younger workers must therefore account for the additive or potentially synergistic effects of both wood dust and formaldehyde exposure present in composite materials.</p>
+                </div>
+
+                <!-- Section III: Quantitative Evidence for Persistent Risk -->
+                <div id="quantitative-evidence" class="report-section card p-4">
+                    <h1 class="mb-4">III. Quantitative Evidence for Persistent Risk After Cessation of Exposure</h1>
+
+                    <p>Empirical data from occupational epidemiology conclusively demonstrates that the carcinogenic process initiated by wood dust is self-sustaining and persists long after the active occupational exposure has ceased.</p>
+
+                    <h2 class="mt-4">III.A. The Determinant Role of Latency</h2>
+                    <p>The most significant factor driving persistent risk is the extremely long time lag, or latency period, required for wood dust-induced sinonasal adenocarcinoma to develop. The carcinogenic process takes decades, with the average latency period estimated to be approximately <strong>40 years</strong> between the initial occupational exposure and the clinical diagnosis of nasal adenocarcinoma. This latency can range widely, from 7 to 70 years. This profound delay implies that the critical biological steps—initiation and promotion—occur long before clinical manifestation, meaning the risk is inherent and ongoing regardless of the individual's current employment status or recent dust levels.</p>
+
+                    <h2 class="mt-4">III.B. Empirical Findings on Risk Decay (Time Since Last Exposure)</h2>
+                    <p>Longitudinal studies focused on high-risk cohorts provide the definitive answer regarding the decay of risk post-cessation. The findings are remarkably consistent: epidemiological studies have concluded that the risk of adenocarcinoma <strong>did not appear to decrease for at least 15 years after termination of exposure to wood dust</strong>.</p>
+                    <p>A major independent review analyzing occupational exposure for compensation purposes confirms this sustained hazard, reporting that risks were "substantially and significantly elevated (OR > 22)" throughout the period of assessment, and crucially, <strong>risks did not decrease for at least 15 years after termination of exposure</strong>. This evidence confirms that ceasing exposure does not lead to a rapid reduction in risk; instead, the risk remains fixed at the elevated level dictated by the preceding exposure, requiring a minimum of 1.5 decades before any potential decline might be measurable.</p>
+
+                    <h2 class="mt-4">III.C. Cumulative Exposure as the Predictive Metric</h2>
+                    <p>The total burden of disease risk that persists is determined by the cumulative exposure experienced during the active working life. A significant dose-response relationship has been consistently documented, with the risk escalating dramatically with increasing intensity and duration of exposure. For long-term hardwood exposure, studies have shown that 35 years of work can result in an Odd Ratio (OR) for AD of 20. Furthermore, quantitative risk assessments based on these epidemiological values estimate that the relative risk (RR) of developing AD after 35 years of exposure can be as high as 300 compared to non-exposed individuals.</p>
+                    <p>The elevated risk is so strongly linked to cumulative exposure that studies have found a significant association with adenocarcinoma even among participants who reported "ever-exposure" at only <strong>low-intensity levels</strong>, with one study reporting an OR of 16.6. The persistence of risk, therefore, is directly proportional to the high cumulative dose accumulated prior to the individual leaving the hazardous environment.</p>
+
+                    <h2 class="mt-4">Table 1: Sinonasal Adenocarcinoma Risk Persistence Metrics</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Study Cohort/Source</th>
+                                    <th>Cancer Histotype</th>
+                                    <th>Key Finding on Risk Decay (Post-Cessation)</th>
+                                    <th>Time Since Last Exposure (TSLE) Observed</th>
+                                    <th>Supporting Risk Metric (Example)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hayes et al. (1987)</td>
+                                    <td>Adenocarcinoma</td>
+                                    <td>Risk did not appear to decrease.</td>
+                                    <td>At least 15 years post-cessation</td>
+                                    <td>Strong association in pre-1941 workers</td>
+                                </tr>
+                                <tr>
+                                    <td>IIAC Review (Hayes et al., 1986)</td>
+                                    <td>Adenocarcinoma</td>
+                                    <td>Risks remained elevated; no decrease observed.</td>
+                                    <td>At least 15 years post-cessation</td>
+                                    <td>OR > 22 (for high exposure groups)</td>
+                                </tr>
+                                <tr>
+                                    <td>Meta-Analysis (e.g., D'Errico et al.)</td>
+                                    <td>Adenocarcinoma (AD)</td>
+                                    <td>Risk increases sharply with exposure duration.</td>
+                                    <td>N/A (Focus on Cumulative Exposure)</td>
+                                    <td>OR = 20 (after 35 years of exposure)</td>
+                                </tr>
+                                <tr>
+                                    <td>Pooled Case-Control Studies</td>
+                                    <td>Sinonasal Cancer (Overall)</td>
+                                    <td>Persistence linked to specific histology (AD).</td>
+                                    <td>N/A (Focus on Ever-Exposure)</td>
+                                    <td>RRpooled = 5.91 (Case-Control)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-3">The comparison of acute and chronic health outcomes further illuminates the persistence mechanism. While a decline in wood dust exposure can lead to a demonstrable reduction in reversible symptoms like coughing, chronic bronchitis, and nasal symptoms in currently exposed workers, the carcinogenic risk shows no corresponding decline over 15 years. This suggests two fundamentally distinct biological pathways: one related to reversible inflammatory irritation (the acute symptoms) and the other related to irreversible cellular and genetic transformation (carcinogenesis).</p>
+                    <p>The extreme latency period (40 years on average) combined with the measured persistence of risk (15+ years) has profound implications for occupational disease coverage and actuarial assessment. If a worker starts exposure at age 25, the cancer is likely to manifest around age 65, and the risk remains fixed and high well into their late 70s or 80s. This necessitates that occupational injury and compensation schemes must acknowledge this substantial lag time, ensuring that workers who develop illness long into retirement, long after their working environment may have changed or ceased to exist, are properly covered.</p>
+                </div>
+
+                <!-- Section IV: Biological and Pathological Mechanisms -->
+                <div id="biological-mechanisms" class="report-section card p-4">
+                    <h1 class="mb-4">IV. Biological and Pathological Mechanisms Underpinning Risk Persistence</h1>
+
+                    <p>The persistence of the heightened cancer risk is biologically explicable, resulting from fixed, irreversible preneoplastic changes induced in the nasal mucosa that continue to progress regardless of continued external exposure.</p>
+
+                    <h2 class="mt-4">IV.A. Mechanism 1: Physical Impairment and Chronic Retention (Mucostasis)</h2>
+                    <p>The unique environment of the nasal cavity is the primary target for wood dust carcinogenicity. Due to the filtration capacity of the nose, a high proportion of inhaled wood dust particles are effectively deposited directly onto the nasal cavity lining. Prolonged exposure leads to decreased efficiency of the mucociliary clearance system, resulting in <strong>mucociliary stasis</strong>.</p>
+                    <p>This physical impairment causes prolonged contact between the irritant particles, and their chemical components, and the sensitive nasal epithelial tissue. The chronic retention of particles leads to chronic irritation and enhanced inflammatory reactions. This mechanical stress and chronic inflammation are key steps in the carcinogenic cascade.</p>
+
+                    <h2 class="mt-4">IV.B. Mechanism 2: Irreversible Cellular Transformation</h2>
+                    <p>The chronic mechanical and chemical irritation culminates in fixed cellular damage that progresses autonomously. Epidemiological studies have consistently observed critical cellular changes in the nasal mucosa of long-term woodworkers, including <strong>metaplasia and dysplasia</strong>. These are pathological lesions recognized as definitive precancerous stages.</p>
+                    <p>Once dysplasia or metaplasia is established, it signifies that the carcinogenic process has moved beyond simple irritation into a phase of irreversible cellular transformation. The damaged tissue effectively possesses its own autonomous trajectory of progression toward malignancy. This explains the crucial finding that the risk continues unabated for years after the external exposure has been physically removed.</p>
+
+                    <h2 class="mt-4">IV.C. Chemical and Genotoxic Contribution</h2>
+                    <p>The carcinogenic action is not purely mechanical; it involves a potent chemical component. Analysis suggests that solvent-extractable fractions found in certain hardwoods (e.g., beech and oak) contain chemicals capable of inducing <strong>mutagenicity and genotoxicity</strong> in laboratory assays. When these genotoxic components are trapped against the epithelial lining due to mucostasis, they promote sustained DNA damage and cellular proliferation, contributing directly to the high rates of adenocarcinoma. This dual mechanism—physical retention enabling chronic inflammation, coupled with chemical/genotoxic insult—is far more dangerous than irritation alone.</p>
+                    <p>The long latency and risk persistence confirm that the crucial determinant is the total cumulative dose required to push the cellular environment past the point of reversibility and induce fixed preneoplastic changes. Once this threshold is crossed, the trajectory of risk becomes independent of ongoing external exposure. Furthermore, the reliance on physical particle retention (mucostasis) as a mechanism of action differentiates wood dust from many systemic chemical carcinogens. This unique physical targeting provides a robust biological explanation for the localized nature of the cancer (sinonasal) and the prolonged persistence of the risk long after inhalation has ceased.</p>
+                </div>
+
+                <!-- Section V: Implications for Clinical Management -->
+                <div id="implications" class="report-section card p-4">
+                    <h1 class="mb-4">V. Implications for Clinical Management and Occupational Health</h1>
+
+                    <p>The documented persistence of risk mandates that occupational health strategies adopt a comprehensive, lifelong perspective, particularly for former woodworkers with historical high exposure.</p>
+
+                    <h2 class="mt-4">V.A. Management of Former Workers</h2>
+                    <p>For workers who have ceased exposure, primary prevention through elimination of the hazard is complete, but the risk management phase begins. Individuals with significant past wood dust exposure, particularly to hardwood, must be advised of the persistent, long-term risk for adenocarcinoma. They should receive counseling to discuss their detailed occupational history with their healthcare provider. An additional vital recommendation is smoking cessation, as inhalation of cigarette smoke reduces the lung's ability to clear dust and may increase overall respiratory disease risk, potentially complicating the persistent wood dust damage.</p>
+
+                    <h2 class="mt-4">V.B. Challenges in Sinonasal Cancer Surveillance</h2>
+                    <p>Despite the strong and consistent evidence demonstrating the exceptionally high risk for adenocarcinoma in exposed cohorts (with ORs reaching 20x to 40x the unexposed rate), there is currently <strong>no established, universally standardized screening protocol</strong> for sinonasal cancer in former woodworkers. Sinonasal cancer remains a relatively rare disease in the general population, which makes widespread, endoscopic screening of all former woodworkers generally considered impractical or inefficient. However, the magnitude of the increased risk for specific, highly exposed groups necessitates a move toward <strong>risk-stratified surveillance</strong> for individuals with documented long-term, high-intensity hardwood exposure.</p>
+
+                    <h2 class="mt-4">V.C. Regulatory Frameworks and Mitigation</h2>
+                    <p>The data confirming the persistence of carcinogenic risk underscores the critical importance of aggressive primary prevention. The regulatory framework must enforce stringent exposure limits (such as the NIOSH Recommended Exposure Limit of 1 mg/m³ total dust or the ACGIH Threshold Limit Value of 1 mg/m³ for most species).</p>
+                    <p>The most effective method for controlling current exposure and mitigating the development of future persistent risk is the reliance on <strong>Engineering Controls</strong>, primarily highly efficient Local Exhaust Ventilation (LEV) systems, designed to remove dust at its source (e.g., table saws). Administrative controls, such as rotating staff to limit time spent in high-dust areas, are also recommended as part of a strategy to limit the overall cumulative dose accrued by individual workers.</p>
+                    <p>The challenge in managing this persistent risk is fundamentally dependent on linking historical exposure to current medical status. Because the latency period can span four decades, occupational history records are often fragmented or non-existent. To effectively implement risk-stratified surveillance for high-risk individuals later in life, public health initiatives must prioritize the creation and preservation of comprehensive, standardized occupational exposure records that follow workers throughout their careers.</p>
+                    <p>Finally, the finding that even low-intensity exposure, if prolonged, can result in a significant, irreversible risk burden (e.g., OR 16.6 for low-intensity AD exposure) is crucial for regulation. This suggests that simply meeting minimum legal Permissible Exposure Limits (PELs) may not be sufficient to prevent workers from crossing the cumulative exposure threshold that leads to irreversible cellular damage over a working lifetime. Therefore, occupational safety practices must actively strive for the lowest technically feasible exposure levels to prevent the establishment of this self-sustaining, persistent risk.</p>
+                </div>
+
+                <!-- Section VI: Conclusion -->
+                <div id="conclusion" class="report-section card p-4">
+                    <h1 class="mb-4">VI. Conclusion</h1>
+
+                    <p class="lead">The evidence overwhelmingly supports the conclusion that the heightened risk for cancer, specifically Sinonasal Adenocarcinoma, <strong>remains</strong> and <strong>persists</strong> long after an individual is no longer exposed to wood dust. This persistence is not an anomaly but a predictable consequence of the disease's long latency period (averaging 40 years) and the fixed, irreversible preneoplastic cellular changes (dysplasia/metaplasia) induced in the nasal epithelium by cumulative dose. Empirical studies confirm this, showing no measurable decrease in risk for at least 15 years post-cessation of exposure.</p>
+
+                    <p>For occupational health and clinical practice, this necessitates a crucial shift in focus from immediate exposure compliance to a lifetime management of cumulative dose and persistent risk. While primary prevention via strict engineering controls remains the only means of mitigating future persistent risk for current workers, the management of former workers requires targeted medical follow-up, awareness of the decades-long latent period, and a recognition of the need for risk-stratified surveillance for high-intensity, hardwood-exposed cohorts.</p>
+                </div>
+
+                <!-- Section VII: References -->
+                <div id="references" class="report-section card p-4">
+                    <h1 class="mb-4">VII. References</h1>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">Cancer Council. Wood products.</li>
+                        <li class="list-group-item">OSHA. Wood Dust Hazards.</li>
+                        <li class="list-group-item">NCBI Bookshelf. Types of cancer associated with wood dust exposure.</li>
+                        <li class="list-group-item">EBSCO. Wood dust and cancer.</li>
+                        <li class="list-group-item">IIAC Report. Nasal carcinoma and occupational exposure to wood dust.</li>
+                        <li class="list-group-item">OEM. Cumulative wood dust exposure sinonasal cancer risk.</li>
+                        <li class="list-group-item">NCBI PMC. Sino-nasal cancer and cumulative exposure.</li>
+                        <li class="list-group-item">OSHA. Wood Dust - Hazard Recognition.</li>
+                        <li class="list-group-item">NCBI PMC. IARC classification update 2009.</li>
+                        <li class="list-group-item">EBSCO. Wood dust and cancer.</li>
+                        <li class="list-group-item">Cancer.gov. Which cancers are associated with exposure to wood dust?</li>
+                        <li class="list-group-item">IARC. Cancer Risk from Occupational Exposure to Wood Dust: A Pooled Analysis.</li>
+                        <li class="list-group-item">IJOMEH. A quantitative risk assessment.</li>
+                        <li class="list-group-item">NCBI Bookshelf. Cancer in Humans (IARC Monograph).</li>
+                        <li class="list-group-item">NCBI PMC. Meta-analysis of occupational SNC risk factors.</li>
+                        <li class="list-group-item">NCBI Bookshelf. Mechanism of wood dust carcinogenicity.</li>
+                        <li class="list-group-item">PubMed (Checkoway et al., 1990). Adenocarcinoma vs SCC risk.</li>
+                        <li class="list-group-item">OSHA. NIOSH recommendations former wood dust exposed workers.</li>
+                        <li class="list-group-item">NCBI PMC (Pukkala et al., 2012). Risk of nasal, nasopharyngeal, and lung cancer among Finnish men.</li>
+                        <li class="list-group-item">OEM. Occupational risk factors for SNEC.</li>
+                        <li class="list-group-item">Academic.oup. A 40% decline in wood dust exposure.</li>
+                        <li class="list-group-item">NCBI PMC (Gomez-Orellana et al., 2021). Impact of declining exposure on health outcome.</li>
+                        <li class="list-group-item">UK Health and Safety Executive. IIAC Report excerpt.</li>
+                        <li class="list-group-item">CDC/NIOSH. Carcinogenicity discussion.</li>
+                        <li class="list-group-item">MulchCancer. Toxicology & genotoxicity.</li>
+                        <li class="list-group-item">PubMed (Sjodahl et al., 1997). Lack of consensus nasal cancer surveillance.</li>
+                        <li class="list-group-item">NTP. Report on Carcinogens Wood Dust Profile.</li>
+                        <li class="list-group-item">CDC/NIOSH. Hazard Control HC10 (Table Saws).</li>
+                        <li class="list-group-item">OSHA. Wood Dust Carcinogens and LEV.</li>
+                        <li class="list-group-item">Cancer Council. How do I reduce my cancer risk?</li>
+                        <li class="list-group-item">Cancer Council. Reduce exposure using administrative controls.</li>
+                        <li class="list-group-item">PubMed (Hayes et al., 1987). Wood dust cancer risk after cessation of exposure epidemiological studies.</li>
+                        <li class="list-group-item">IIAC Report. Nasal carcinoma and occupational exposure to wood dust.</li>
+                        <li class="list-group-item">PubMed (Hayes et al., 1987). Sinonasal adenocarcinoma risk decay.</li>
+                        <li class="list-group-item">IIAC Report. Sinonasal adenocarcinoma risk decay.</li>
+                        <li class="list-group-item">IJOMEH. Sinonasal Adenocarcinoma and SCC prevalence.</li>
+                        <li class="list-group-item">NCBI PMC. Sino-nasal cancer and cumulative exposure.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.report-section');
+            const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+            function showSection(sectionId) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Show the requested section
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.style.display = 'block';
+                    window.scrollTo(0, 0); // Scroll to top on navigation
+                }
+
+                // Update active navigation link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Set up click handlers for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const sectionId = event.target.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
+
+            // Initialize: Show the Executive Summary by default
+            showSection('executive-summary');
+        });
+    </script>
+</body>
+</html>
