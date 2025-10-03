@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         createRiskByIndustryChart('high');
     });
     
-function setupComplaintsSlider() {
+    function setupComplaintsSlider() {
     const slider = document.getElementById('complaints-slider');
     let currentIndex = 0;
 
@@ -208,31 +208,78 @@ function setupComplaintsSlider() {
         }, 50); // 50ms is enough for the browser to register the element
     }
 
-    function nextComplaint() {
-        // Find the current active element to fade it out before injecting the new one
+// ... (Keep the rest of your JS code above this function unchanged) ...
+
+function setupComplaintsSlider() {
+    const slider = document.getElementById('complaints-slider');
+    let currentIndex = 0;
+    const intervalDuration = 6000; // Total time per slide
+    const fadeDuration = 600;      // Must be slightly longer than the CSS transition (500ms)
+
+    function createComplaintElement(complaint, index) {
+        const div = document.createElement('div');
+        div.id = `complaint-${index}`;
+        
+        // Use Bootstrap classes and the custom transition class
+        div.className = 'position-absolute top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center p-4 text-center custom-complaint-transition';
+        
+        // Start hidden
+        div.style.opacity = 0; 
+
+        div.innerHTML = `
+            <p class="text-secondary fst-italic">"${complaint.quote}"</p>
+            <p class="mt-2 small fw-semibold text-secondary">- ${complaint.source}</p>
+        `;
+        return div;
+    }
+
+    function showComplaint(index) {
+        const complaint = complaintData[index];
+        const newEl = createComplaintElement(complaint, index);
         const currentEl = slider.querySelector('.custom-complaint-transition');
+        
         if (currentEl) {
-            // Initiate fade-out (opacity 0)
-            currentEl.style.opacity = 0; 
-            
-            // Wait for the fade-out duration (500ms from CSS) + a small buffer (100ms)
+            // 1. Start the fade-out of the current element
+            currentEl.style.opacity = 0;
+
+            // 2. Wait for the fade-out to complete
             setTimeout(() => {
-                currentIndex = (currentIndex + 1) % complaintData.length;
-                showComplaint(currentIndex);
-            }, 600); // Wait 600ms before injecting the new element
+                // 3. Remove the old element from the DOM
+                slider.removeChild(currentEl);
+                
+                // 4. Add the new element (still hidden at opacity 0)
+                slider.appendChild(newEl);
+
+                // 5. Use requestAnimationFrame/setTimeout for smooth fade-in
+                //    This tells the browser: "Wait one drawing cycle, THEN set opacity to 1."
+                setTimeout(() => {
+                    newEl.style.opacity = 1;
+                }, 50); // Small delay to ensure the element is painted before transition starts
+
+            }, fadeDuration);
+
         } else {
-            // Initial load path (no current element to fade out)
+            // Initial load: Add the first element immediately and fade it in
+            slider.appendChild(newEl);
+            setTimeout(() => {
+                newEl.style.opacity = 1;
+            }, 50);
+        }
+        }
+
+        function nextComplaint() {
             currentIndex = (currentIndex + 1) % complaintData.length;
             showComplaint(currentIndex);
         }
+
+        // Initialize with the first complaint
+        showComplaint(currentIndex);
+        
+        // Set the continuous interval
+        setInterval(nextComplaint, intervalDuration);
     }
 
-    // Initial setup: show the first complaint immediately
-    showComplaint(currentIndex);
-    
-    // Start the interval for the next complaints
-    setInterval(nextComplaint, 6000); 
-    }
+// ... (Keep the rest of your JS code below this function unchanged) ...
 
     function setupFlowchart() {
         const flowchart = document.getElementById('flowchart');
