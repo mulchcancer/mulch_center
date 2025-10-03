@@ -1,0 +1,149 @@
+/*
+ * Base custom styles
+ * Bootstrap doesn't include the Inter font, so we keep the font family override.
+ */
+body {
+    font-family: 'Inter', sans-serif;
+    /* #FDFBF8 is a very light off-white */
+    background-color: #FDFBF8; 
+    /* #404040 is a dark gray that replaces Tailwind's text-gray-800 for body text */
+    color: #404040; 
+}
+
+/* Custom Color Variables for easy theme re-use */
+:root {
+    --custom-brown: #A67B5B;
+    --custom-light-beige: #EFEBE7;
+    --custom-background: #FDFBF8;
+    --custom-dark-gray: #404040;
+}
+
+/* Custom Bootstrap Class Replacements */
+.custom-text-brown {
+    color: var(--custom-brown) !important;
+}
+
+.custom-bg-brown {
+    background-color: var(--custom-brown) !important;
+}
+
+.custom-bg-light {
+    background-color: var(--custom-light-beige) !important;
+}
+
+/* Utility Class for min-height on content containers (equivalent to min-h-screen) */
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+/* * Navigation Button Styles (Replaces custom Tailwind class look) 
+ * We are using .btn-light as a base, and overriding .nav-button and .active state.
+ */
+.nav-button {
+    transition: all 0.3s ease;
+    /* Override Bootstrap's default btn hover/focus */
+    --bs-btn-hover-bg: var(--custom-light-beige); 
+    --bs-btn-border-color: #ced4da; /* Bootstrap's secondary-subtle border */
+}
+
+.nav-button.active,
+.nav-button.active:hover {
+    background-color: var(--custom-brown) !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    border-color: var(--custom-brown) !important;
+}
+
+.nav-button:not(.active):hover {
+    background-color: var(--custom-light-beige) !important;
+}
+
+/* * Tab Content Section Management (Equivalent to Tailwind's hidden/block switch) 
+ */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* * Chart Container Sizing (Replacing Tailwind's h-80, md:h-96, max-h-[500px]) 
+ */
+.chart-container {
+    position: relative;
+    /* Equivalent to h-80 (20rem / 320px) */
+    height: 320px; 
+}
+
+/* Equivalent to md:h-96 (24rem / 384px) */
+@media (min-width: 768px) { 
+    .chart-container {
+        height: 384px;
+    }
+}
+
+.custom-h-lg {
+    height: 20rem; /* h-80 equivalent */
+}
+
+.custom-h-xl {
+    height: 24rem; /* h-96 equivalent */
+    max-height: 500px; /* max-h-[500px] equivalent */
+}
+
+.custom-h-slider {
+    height: 10rem; /* Custom height for the complaint slider */
+}
+
+.custom-h-details {
+    min-height: 100px; /* min-h-[100px] for the flowchart details */
+}
+
+
+/* * Pathway Item Styles (Circle size and tooltip width/transition)
+ * Replaces w-32 h-32 and custom tooltip classes
+ */
+.custom-w-8 {
+    width: 8rem;
+}
+.custom-h-8 {
+    height: 8rem;
+}
+.custom-arrow-size {
+    font-size: 3rem;
+}
+.custom-tooltip-w {
+    width: 16rem; /* w-64 equivalent */
+}
+
+.pathway-item:hover .pathway-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* * Flowchart Step Styles (Interaction effects)
+ */
+.flowchart-step {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Bootstrap's secondary-subtle border color: #ced4da */
+    border-color: #ced4da; 
+}
+
+.flowchart-step:hover, 
+.flowchart-step.active {
+    /* translateY(-5px) */
+    transform: translateY(-5px); 
+    
+    /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Standard Bootstrap shadow */
+
+    /* border-color: #A67B5B */
+    border-color: var(--custom-brown) !important; 
+}
+
+.flowchart-step.active {
+    /* Reset transform when active to avoid unexpected stacking issues if active state is permanent */
+    transform: none; 
+}
