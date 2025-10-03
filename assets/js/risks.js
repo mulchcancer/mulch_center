@@ -180,33 +180,58 @@ document.addEventListener('DOMContentLoaded', function () {
         createRiskByIndustryChart('high');
     });
     
-    function setupComplaintsSlider() {
-        const slider = document.getElementById('complaints-slider');
-        let currentIndex = 0;
+function setupComplaintsSlider() {
+    const slider = document.getElementById('complaints-slider');
+    let currentIndex = 0;
 
-        function showComplaint(index) {
-            const complaint = complaintData[index];
+    function showComplaint(index) {
+        const complaint = complaintData[index];
+        const isInitialLoad = slider.querySelector(`#complaint-${index}`) === null;
+
+        // 1. Create the new element with text and an initial opacity of 0
+        slider.innerHTML = `
+            <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center p-4 text-center custom-complaint-transition opacity-0" id="complaint-${index}">
+                <p class="text-secondary fst-italic">"${complaint.quote}"</p>
+                <p class="mt-2 small fw-semibold text-secondary">- ${complaint.source}</p>
+            </div>
+        `;
+        
+        // 2. Find the newly inserted element
+        const el = document.getElementById(`complaint-${index}`);
+
+        // 3. Use a slight delay to allow the browser to render the element 
+        //    before transitioning its opacity. This is crucial for CSS transitions on new elements.
+        setTimeout(() => {
+             // If it's the first load, set opacity to 1 immediately for a blank-space-free start.
+             // Otherwise, rely on the CSS transition for a smooth fade-in.
+             el.style.opacity = 1;
+        }, 50); // 50ms is enough for the browser to register the element
+    }
+
+    function nextComplaint() {
+        // Find the current active element to fade it out before injecting the new one
+        const currentEl = slider.querySelector('.custom-complaint-transition');
+        if (currentEl) {
+            // Initiate fade-out (opacity 0)
+            currentEl.style.opacity = 0; 
             
-            // FIX: Using Bootstrap 5 classes and custom transition class
-            slider.innerHTML = `
-                <div class="position-absolute top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center p-4 text-center custom-complaint-transition opacity-0" id="complaint-${index}">
-                    <p class="text-secondary fst-italic">"${complaint.quote}"</p>
-                    <p class="mt-2 small fw-semibold text-secondary">- ${complaint.source}</p>
-                </div>
-            `;
+            // Wait for the fade-out duration (500ms from CSS) + a small buffer (100ms)
             setTimeout(() => {
-                 const el = document.getElementById(`complaint-${index}`);
-                 if(el) el.style.opacity = 1;
-            }, 50);
-        }
-
-        function nextComplaint() {
+                currentIndex = (currentIndex + 1) % complaintData.length;
+                showComplaint(currentIndex);
+            }, 600); // Wait 600ms before injecting the new element
+        } else {
+            // Initial load path (no current element to fade out)
             currentIndex = (currentIndex + 1) % complaintData.length;
             showComplaint(currentIndex);
         }
+    }
 
-        showComplaint(currentIndex);
-        setInterval(nextComplaint, 6000);
+    // Initial setup: show the first complaint immediately
+    showComplaint(currentIndex);
+    
+    // Start the interval for the next complaints
+    setInterval(nextComplaint, 6000); 
     }
 
     function setupFlowchart() {
