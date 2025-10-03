@@ -4,69 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Report: Wood Dust Health Risks</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/risks.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Warm Neutrals -->
-    <!-- Application Structure Plan: The SPA is designed with a top-down, thematic flow to guide the user from general knowledge to specific issues. It starts with an 'Overview' for key facts, moves to 'Health Risks' for scientific details, then 'Community Impact' for real-world context (mulch plants), and finally 'Regulatory Landscape' for the response framework. This structure was chosen over a linear report format to allow users to explore areas of interest non-linearly, making complex information more digestible. Key interactions include chart filtering to compare risks and clickable diagrams to understand processes, enhancing user engagement and comprehension. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: IARC Classification -> Goal: Inform -> Viz: Key Stat Card (HTML/CSS) -> Interaction: Static Display -> Justification: Provides immediate, high-impact information.
-        - Report Info: Cancer types linked to wood dust -> Goal: Compare Proportions -> Viz: Donut Chart (Chart.js) -> Interaction: Hover for tooltips -> Justification: Visually shows the prevalence of specific cancers, especially sino-nasal.
-        - Report Info: Relative risk by industry/wood -> Goal: Compare Magnitudes -> Viz: Bar Chart (Chart.js) -> Interaction: Filter buttons (JS update) -> Justification: Allows users to see how risk levels change based on exposure context.
-        - Report Info: Dust spread from mulch facility -> Goal: Organize/Explain Process -> Viz: Source-Pathway-Receptor Diagram (HTML/CSS) -> Interaction: Hover to reveal details -> Justification: Simplifies a complex environmental process into an easy-to-understand visual model.
-        - Report Info: Regulatory complaint process -> Goal: Organize/Explain Process -> Viz: Clickable Flowchart (HTML/CSS/JS) -> Interaction: Click to expand steps -> Justification: Breaks down a bureaucratic process into manageable, interactive steps.
-        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FDFBF8;
-            color: #404040;
-        }
-        .nav-button {
-            transition: all 0.3s ease;
-        }
-        .nav-button.active {
-            background-color: #A67B5B;
-            color: #FFFFFF;
-            font-weight: 600;
-        }
-        .nav-button:not(.active):hover {
-            background-color: #EFEBE7;
-        }
-        .content-section {
-            display: none;
-        }
-        .content-section.active {
-            display: block;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .flowchart-step {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .flowchart-step:hover, .flowchart-step.active {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border-color: #A67B5B;
-        }
-        .pathway-item:hover .pathway-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-    </style>
+    <!-- charts -->
+   
 </head>
 <body class="antialiased">
     <div class="min-h-screen">
