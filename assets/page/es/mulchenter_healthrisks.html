@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Interactivo Riesgos Para La Salud Del Polvo De Madera</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/assets/css/risks.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+    <div class="min-vh-100">
+        <header class="bg-white shadow-sm">
+            <div class="container-fluid py-4 py-lg-5 px-4 px-sm-5 px-lg-6"> 
+                <h1 class="h3 fw-bold lh-sm text-dark">Polvo De Madera: Desde El Riesgo Ocupacional Hasta La Preocupación De La Comunidad</h1>
+                <p class="mt-2 small text-secondary">Un análisis interactivo de los riesgos para la salud, el impacto de la comunidad y la supervisión regulatoria de las partículas de madera en el aire.</p>
+            </div>
+        </header>
+
+        <main class="container-fluid py-4 px-4 px-sm-5 px-lg-6"> 
+            <nav class="d-flex flex-wrap gap-2 mb-4" id="navigation">
+                <button data-target="overview" class="nav-button active btn btn-light btn-sm fw-medium border border-secondary-subtle">Descripción general</button>
+                <button data-target="health-risks" class="nav-button btn btn-light btn-sm fw-medium border border-secondary-subtle">Riesgos para la salud</button>
+                <button data-target="community-impact" class="nav-button btn btn-light btn-sm fw-medium border border-secondary-subtle">Impacto comunitario</button>
+                <button data-target="regulatory-landscape" class="nav-button btn btn-light btn-sm fw-medium border border-secondary-subtle">Ámbito Regulatorio</button>
+            </nav>
+
+            <div id="content-container">
+                <section id="overview" class="content-section active">
+                    <h2 class="h4 fw-semibold mb-3 text-dark">Hallazgos Clave De Un Vistazo</h2>
+                    <p class="mb-4 text-secondary">Esta sección proporciona un resumen de alto nivel de la información más crítica con respecto al polvo de madera. Sirve como una introducción a su clasificación como carcinógeno y destaca las principales preocupaciones de salud identificadas en la literatura científica, estableciendo el contexto para las secciones más detalladas que siguen.</p>
+                    
+                    <div class="row g-4"> 
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="bg-white p-4 rounded-3 shadow-sm">
+                                <h3 class="fw-semibold h5 text-dark">Clasificación Oficial</h3>
+                                <p class="mt-2 h1 fw-bold custom-text-brown">Grupo 1</p>
+                                <p class="mt-2 text-secondary">El polvo de madera se clasifica como un "carcinógeno humano conocido" por la Agencia Internacional de Investigación sobre Cáncer (IARC) y el Programa Nacional de Toxicología de los Estados Unidos (NTP).</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="bg-white p-4 rounded-3 shadow-sm">
+                                <h3 class="fw-semibold h5 text-dark">Riesgo De Cáncer Primario</h3>
+                                <p class="mt-2 h2 fw-bold custom-text-brown">Cánceres Sinonasales</p>
+                                <p class="mt-2 text-secondary">La evidencia más fuerte y consistente vincula la exposición al polvo de madera con los cánceres de la cavidad nasal y los senos paranasales. También se han estudiado otros cánceres como el cáncer de pulmón, pero el enlace es menos definitivo.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="bg-white p-4 rounded-3 shadow-sm">
+                                <h3 class="fw-semibold h5 text-dark">Más Allá Del Cáncer</h3>
+                                <p class="mt-2 h2 fw-bold custom-text-brown">Problemas Respiratorios</p>
+                                <p class="mt-2 text-secondary">La exposición también puede conducir a problemas de salud no cancerosos, como asma, bronquitis, dermatitis y otras reacciones alérgicas. Estas son a menudo las principales quejas de las comunidades afectadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="mt-4 bg-white p-4 rounded-3 shadow-sm">
+                        <h3 class="fw-semibold h5 text-center text-dark mb-4">Cánceres Primarios Asociados Con La Exposición Al Polvo De Madera</h3>
+                         <div class="chart-container custom-h-lg">
+                             <canvas id="cancerTypesChart"></canvas>
+                         </div>
+                    </div>
+                </section>
+
+                <section id="health-risks" class="content-section">
+                    <h2 class="h4 fw-semibold mb-3 text-dark">Entendiendo Los Riesgos Cancerígenos</h2>
+                    <p class="mb-4 text-secondary">Esta sección profundiza en la evidencia científica que vincula el polvo de madera con el cáncer. El cuadro interactivo a continuación le permite explorar cómo el riesgo de desarrollar cáncer sino-nasal varía significativamente en diferentes industrias y niveles de exposición. Esto resalta que no toda la exposición al polvo de madera conlleva el mismo nivel de riesgo, con factores como el tipo de madera y los procesos de trabajo que juegan un papel crucial.</p>
+                    <div class="bg-white p-4 rounded-3 shadow-sm">
+                        <h3 class="fw-semibold h5 text-center text-dark mb-2">Riesgo Relativo De Cáncer Sino Nasal Por Industria</h3>
+                        <p class="text-center small text-secondary mb-4">Los Odds Ratios (OR) indican la mayor probabilidad de enfermedad. Un OR de 10 significa un riesgo de 10 veces mayor.</p>
+                        
+                        <div class="d-flex justify-content-center gap-2 mb-4">
+                            <button id="filter-all" class="filter-btn custom-bg-brown text-white btn btn-sm rounded-2">Todas Las Industrias</button>
+                            <button id="filter-high" class="filter-btn bg-light text-secondary btn btn-sm rounded-2">Solo De Alto Riesgo</button>
+                        </div>
+                        <div class="chart-container custom-h-xl">
+                            <canvas id="riskByIndustryChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="community-impact" class="content-section">
+                    <h2 class="h4 fw-semibold mb-3 text-dark">Desde El Piso De La Fábrica Hasta Los Barrios Residenciales</h2>
+                    <p class="mb-4 text-secondary">Si bien la mayoría de las investigaciones se centran en entornos ocupacionales, las comunidades que viven cerca de instalaciones como las plantas de producción de mantillo también enfrentan exposición al polvo de madera en el aire. Esta sección ilustra cómo el "polvo fugitivo" se escapa de estos sitios y se convierte en una preocupación de salud molesta y potencial para los residentes cercanos, lo que lleva a quejas formales y escrutinio regulatorio.</p>
+                    <div class="bg-white p-4 rounded-3 shadow-sm">
+                        <h3 class="fw-semibold h5 text-center text-dark mb-4">El Camino De La Exposición Al Polvo Fugitivo</h3>
+                        
+                        <div class="d-flex flex-column flex-md-row align-items-center justify-content-around gap-4 text-center">
+                            
+                            <div class="pathway-item position-relative">
+                                <div class="custom-w-8 custom-h-8 custom-bg-light rounded-circle d-flex align-items-center justify-content-center p-3">
+                                    <span class="fw-bold custom-text-brown">FUENTE</span>
+                                </div>
+                                <p class="mt-2 fw-semibold">Montones de mantillo y molienda</p>
+                                <div class="pathway-tooltip position-absolute bottom-100 mb-2 custom-tooltip-w bg-dark text-white small rounded py-2 px-3 opacity-0 invisible transition-opacity duration-300">
+                                    Grandes montones de chips de madera al aire libre y el polvo generado a partir de las operaciones de molienda.
+                                </div>
+                            </div>
+                            
+                            <div class="custom-arrow-size text-secondary fw-light d-none d-md-block">&rarr;</div>
+                            <div class="custom-arrow-size text-secondary fw-light d-md-none">&darr;</div>
+                            
+                            <div class="pathway-item position-relative">
+                                <div class="custom-w-8 custom-h-8 custom-bg-light rounded-circle d-flex align-items-center justify-content-center p-3">
+                                    <span class="fw-bold custom-text-brown">CAMINO</span>
+                                </div>
+                                <p class="mt-2 fw-semibold">Corrientes de viento y aire</p>
+                                <div class="pathway-tooltip position-absolute bottom-100 mb-2 custom-tooltip-w bg-dark text-white small rounded py-2 px-3 opacity-0 invisible transition-opacity duration-300">
+                                    El viento recoge partículas de madera fina y las lleva fuera del sitio hacia el entorno circundante.
+                                </div>
+                            </div>
+                            
+                            <div class="custom-arrow-size text-secondary fw-light d-none d-md-block">&rarr;</div>
+                            <div class="custom-arrow-size text-secondary fw-light d-md-none">&darr;</div>
+                            
+                            <div class="pathway-item position-relative">
+                                <div class="custom-w-8 custom-h-8 custom-bg-light rounded-circle d-flex align-items-center justify-content-center p-3">
+                                    <span class="fw-bold custom-text-brown">RECEPTOR</span>
+                                </div>
+                                <p class="mt-2 fw-semibold">Casas Y Residentes Cercanas</p>
+                                <div class="pathway-tooltip position-absolute bottom-100 mb-2 custom-tooltip-w bg-dark text-white small rounded py-2 px-3 opacity-0 invisible transition-opacity duration-300">
+                                    Los residentes inhalan partículas, y el polvo se asienta en automóviles, hogares y propiedades, lo que lleva a quejas de salud y molestias.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-white p-4 rounded-3 shadow-sm">
+                        <h3 class="fw-semibold h5 text-center text-dark mb-4">Quejas De Residentes Documentadas</h3>
+                        <div id="complaints-slider" class="position-relative custom-h-slider">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="regulatory-landscape" class="content-section">
+                    <h2 class="h4 fw-semibold mb-3 text-dark">Supervisión Y Aplicación</h2>
+                    <p class="mb-4 text-secondary">Las agencias ambientales estatales son responsables de regular la calidad del aire y abordar las molestias públicas. Esta sección describe el proceso típico que sigue a una queja residente sobre el polvo fugitivo. Haga clic en cada paso para comprender su papel en el marco regulatorio, cuyo objetivo es equilibrar la actividad industrial con el bienestar de la comunidad.</p>
+                    <div class="bg-white p-4 rounded-3 shadow-sm">
+                        <h3 class="fw-semibold h5 text-center text-dark mb-4">Proceso Típico De Queja Y Respuesta</h3>
+                        
+                        <div class="d-flex flex-column flex-md-row align-items-start justify-content-center gap-3 text-center small" id="flowchart">
+                            <div class="flowchart-step p-3 border border-2 border-secondary-subtle rounded-3 bg-white flex-grow-1" data-id="complaint">
+                                <p class="fw-bold">1. Queja De Residente</p>
+                            </div>
+                            <div class="d-flex align-items-center h5 text-secondary mx-2 mt-2">&rarr;</div>
+                            <div class="flowchart-step p-3 border border-2 border-secondary-subtle rounded-3 bg-white flex-grow-1" data-id="investigation">
+                                <p class="fw-bold">2. Investigación De La Agencia</p>
+                            </div>
+                            <div class="d-flex align-items-center h5 text-secondary mx-2 mt-2">&rarr;</div>
+                            <div class="flowchart-step p-3 border border-2 border-secondary-subtle rounded-3 bg-white flex-grow-1" data-id="violation">
+                                <p class="fw-bold">3. Aviso De Violación</p>
+                            </div>
+                            <div class="d-flex align-items-center h5 text-secondary mx-2 mt-2">&rarr;</div>
+                            <div class="flowchart-step p-3 border border-2 border-secondary-subtle rounded-3 bg-white flex-grow-1" data-id="action">
+                                <p class="fw-bold">4. Acción Correctiva</p>
+                            </div>
+                        </div>
+                        <div id="flowchart-details" class="mt-4 p-3 bg-light rounded-3 custom-h-details">
+                            <p class="text-secondary">Haga clic en un paso arriba para ver los detalles.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="/assets/js/risks.js"></script>
+</body>
+</html>
