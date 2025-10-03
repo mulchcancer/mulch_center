@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Report: Wood Dust Health Risks</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/risks.css">
+</head>
+<body class="bg-light">
+
+  <header class="bg-white shadow-sm">
+    <div class="container py-4">
+      <h1 class="display-6 fw-bold text-dark">Wood Dust: From Occupational Hazard to Community Concern</h1>
+      <p class="text-muted">An interactive analysis of the health risks, community impact, and regulatory oversight of airborne wood particulates.</p>
+    </div>
+  </header>
+
+  <main class="container py-4">
+    <!-- Navigation -->
+    <nav class="mb-4" id="navigation">
+      <div class="btn-group" role="tablist" aria-label="Sections">
+        <button data-target="overview" type="button" class="btn btn-primary nav-button">Overview</button>
+        <button data-target="health-risks" type="button" class="btn btn-outline-secondary nav-button">Health Risks</button>
+        <button data-target="community-impact" type="button" class="btn btn-outline-secondary nav-button">Community Impact</button>
+        <button data-target="regulatory-landscape" type="button" class="btn btn-outline-secondary nav-button">Regulatory Landscape</button>
+      </div>
+    </nav>
+
+    <div id="content-container">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="content-section">
+        <h2 class="h4 fw-semibold mb-3">Key Findings at a Glance</h2>
+        <p class="text-muted">This section provides a high-level summary of the most critical information regarding wood dust...</p>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Official Classification</h5>
+                <p class="display-6 fw-bold text-brown">Group 1</p>
+                <p class="text-muted">Wood dust is classified as a "known human carcinogen" by the IARC and the U.S. NTP.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Primary Cancer Risk</h5>
+                <p class="fs-4 fw-bold text-brown">Sino-nasal Cancers</p>
+                <p class="text-muted">The strongest and most consistent evidence links wood dust exposure to cancers of the nasal cavity and paranasal sinuses.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Beyond Cancer</h5>
+                <p class="fs-4 fw-bold text-brown">Respiratory Issues</p>
+                <p class="text-muted">Exposure can also lead to non-cancerous health problems including asthma, bronchitis, dermatitis, and allergic reactions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm mt-4">
+          <div class="card-body">
+            <h5 class="card-title text-center">Primary Cancers Associated with Wood Dust Exposure</h5>
+            <div class="chart-wrap" style="height:350px;">
+              <canvas id="cancerTypesChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEALTH RISKS -->
+      <section id="health-risks" class="content-section d-none">
+        <h2 class="h4 fw-semibold mb-3">Understanding the Carcinogenic Risks</h2>
+        <p class="text-muted">Interactive chart below shows how risk varies across industries and exposure levels.</p>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="text-center">Relative Risk of Sino-nasal Cancer by Industry</h5>
+            <p class="small text-muted text-center">Odds Ratios (OR) indicate the increased likelihood of disease.</p>
+
+            <div class="d-flex justify-content-center gap-2 mb-3">
+              <button id="filter-all" class="btn btn-sm filter-btn btn-brown text-white">All Industries</button>
+              <button id="filter-high" class="btn btn-sm filter-btn btn-outline-secondary">High-Risk Only</button>
+            </div>
+
+            <div class="chart-wrap" style="height:400px;">
+              <canvas id="riskByIndustryChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMMUNITY IMPACT -->
+      <section id="community-impact" class="content-section d-none">
+        <h2 class="h4 fw-semibold mb-3">From Factory Floor to Residential Neighborhoods</h2>
+        <p class="text-muted">Communities near facilities like mulch production plants can face fugitive wood dust exposure.</p>
+
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="mb-4">The Pathway of Fugitive Dust Exposure</h5>
+
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-around gap-4">
+              <div class="pathway-item" tabindex="0" data-bs-toggle="tooltip" title="Large, open-air piles of wood chips and the dust generated from grinding operations.">
+                <div class="circle">SOURCE</div>
+                <p class="fw-semibold mt-2">Mulch Piles & Grinding</p>
+              </div>
+
+              <div class="display-6 text-muted d-none d-md-block">&rarr;</div>
+
+              <div class="pathway-item" tabindex="0" data-bs-toggle="tooltip" title="Wind picks up fine wood particles and carries them off-site into the surrounding environment.">
+                <div class="circle">PATHWAY</div>
+                <p class="fw-semibold mt-2">Wind & Air Currents</p>
+              </div>
+
+              <div class="display-6 text-muted d-none d-md-block">&rarr;</div>
+
+              <div class="pathway-item" tabindex="0" data-bs-toggle="tooltip" title="Residents inhale particulates, and dust settles on cars, homes, and property, leading to health and nuisance complaints.">
+                <div class="circle">RECEPTOR</div>
+                <p class="fw-semibold mt-2">Nearby Homes & Residents</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm mt-4">
+          <div class="card-body">
+            <h5 class="text-center mb-3">Documented Resident Complaints</h5>
+            <div id="complaints-slider" class="position-relative" style="height:150px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGULATORY LANDSCAPE -->
+      <section id="regulatory-landscape" class="content-section d-none">
+        <h2 class="h4 fw-semibold mb-3">Oversight and Enforcement</h2>
+        <p class="text-muted">Typical process following a resident complaint about fugitive dust.</p>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="text-center mb-4">Typical Complaint and Response Process</h5>
+
+            <div id="flowchart" class="d-flex flex-column flex-md-row gap-3 text-center align-items-stretch">
+              <div class="flowchart-step border p-3 rounded bg-white flex-fill" data-id="complaint"><strong>1. Resident Complaint</strong></div>
+              <div class="d-none d-md-flex align-items-center">&rarr;</div>
+              <div class="flowchart-step border p-3 rounded bg-white flex-fill" data-id="investigation"><strong>2. Agency Investigation</strong></div>
+              <div class="d-none d-md-flex align-items-center">&rarr;</div>
+              <div class="flowchart-step border p-3 rounded bg-white flex-fill" data-id="violation"><strong>3. Notice of Violation</strong></div>
+              <div class="d-none d-md-flex align-items-center">&rarr;</div>
+              <div class="flowchart-step border p-3 rounded bg-white flex-fill" data-id="action"><strong>4. Corrective Action</strong></div>
+            </div>
+
+            <div id="flowchart-details" class="mt-3 p-3 bg-light rounded">
+              <p class="text-muted">Click a step above to see details.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Bootstrap Bundle (includes Popper for tooltips) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/risks.js"></script>
+</body>
+</html>
