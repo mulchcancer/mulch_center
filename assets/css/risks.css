@@ -1,133 +1,40 @@
-/*
- * Base custom styles
- */
 body {
-    font-family: 'Inter', sans-serif;
-    /* #FDFBF8 is a very light off-white */
-    background-color: #FDFBF8; 
-    /* #404040 is a dark gray */
-    color: #404040; 
+  font-family: 'Inter', sans-serif;
 }
 
-/* Custom Color Variables for easy theme re-use */
-:root {
-    --custom-brown: #A67B5B;
-    --custom-light-beige: #EFEBE7;
+.text-brown {
+  color: #A67B5B;
 }
 
-/* Custom Bootstrap Class Replacements */
-.custom-text-brown {
-    color: var(--custom-brown) !important;
+.btn-brown {
+  background-color: #A67B5B;
+  border-color: #A67B5B;
 }
 
-.custom-bg-brown {
-    background-color: var(--custom-brown) !important;
+.btn-brown:hover {
+  background-color: #8d6649;
+  border-color: #8d6649;
 }
 
-.custom-bg-light {
-    background-color: var(--custom-light-beige) !important;
+/* Circles in pathway */
+.circle {
+  width: 120px;
+  height: 120px;
+  background: #EFEBE7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #A67B5B;
+  margin: auto;
 }
 
-/* * Navigation Button Styles */
-.nav-button {
-    transition: all 0.3s ease;
-    /* Override Bootstrap's default btn hover/focus */
-    --bs-btn-hover-bg: var(--custom-light-beige); 
-    --bs-btn-border-color: #ced4da; /* Bootstrap's secondary-subtle border */
-}
-
-.nav-button.active,
-.nav-button.active:hover {
-    background-color: var(--custom-brown) !important;
-    color: #FFFFFF !important;
-    font-weight: 600 !important;
-    border-color: var(--custom-brown) !important;
-}
-
-.nav-button:not(.active):hover {
-    background-color: var(--custom-light-beige) !important;
-}
-
-/* * Tab Content Section Management */
-.content-section {
-    display: none;
-}
-
-.content-section.active {
-    display: block;
-}
-
-/* * Chart Container Sizing */
-.chart-container {
-    position: relative;
-}
-
-.custom-h-lg {
-    height: 20rem; /* h-80 equivalent */
-}
-
-.custom-h-xl {
-    height: 24rem; /* h-96 equivalent */
-    max-height: 500px; /* max-h-[500px] equivalent */
-}
-
-/* * Complaint Slider Fixes */
-.custom-h-slider {
-    height: 10rem; /* h-40 equivalent */
-    position: relative; /* Must be relative for absolute children to work */
-}
-
-/* Custom transition for the sliding effect */
-.custom-complaint-transition {
-    transition: opacity 500ms ease-in-out;
-}
-
-/* * Flowchart Details Min-Height */
-.custom-h-details {
-    min-height: 100px; /* min-h-[100px] */
-}
-
-
-/* * Pathway Item Styles (Circle size and tooltip width/transition) */
-.custom-w-8 {
-    width: 8rem;
-}
-.custom-h-8 {
-    height: 8rem;
-}
-.custom-arrow-size {
-    font-size: 3rem;
-}
-.custom-tooltip-w {
-    width: 16rem; /* w-64 equivalent */
-}
-
-.pathway-item:hover .pathway-tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* * Flowchart Step Styles (Interaction effects) */
-.flowchart-step {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    /* Bootstrap's secondary-subtle border color: #ced4da */
-    border-color: #ced4da; 
-}
-
-.flowchart-step:hover, 
-.flowchart-step.active {
-    /* translateY(-5px) */
-    transform: translateY(-5px); 
-    
-    /* Standard Bootstrap shadow equivalent for the hover effect */
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; 
-
-    /* border-color: #A67B5B */
-    border-color: var(--custom-brown) !important; 
+.content-section.d-none {
+  display: none !important;
 }
 
 .flowchart-step.active {
-    /* Reset transform when active to avoid unexpected stacking issues if active state is permanent */
-    transform: none; 
+  border-color: #A67B5B !important;
+  background: #F5F1EC !important;
 }
