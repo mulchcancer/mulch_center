@@ -223,3 +223,12 @@
 .icon-yelp:before {
   content: "\ead7";
 }
+.social-links i {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover i {
+  transform: scale(1.1);
+  color: #ffffff;
+}
