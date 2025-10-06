@@ -19,7 +19,11 @@
     "changefreq": "weekly",
     "priority": "0.8"
   },
-
+  {
+    "loc": "https://mulchcancer.com/assets/page/mulchcenter_health_risks.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
   {
     "loc": "https://mulchcancer.com/assets/page/mulchcenter_occupational.html",
     "changefreq": "monthly",
@@ -35,7 +39,6 @@
     "changefreq": "weekly",
     "priority": "0.8"
   },
-
   {
     "loc": "https://mulchcancer.com/assets/page/mulchcenter_wood-dust-summary.html",
     "changefreq": "monthly",
@@ -78,11 +81,20 @@
     "priority": "0.8"
   },
   {
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_persistent_risk.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
+    "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_health_risks.html",
+    "changefreq": "weekly",
+    "priority": "0.8"
+  },
+  {
     "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_wood_dust_carcinogenicity.html",
     "changefreq": "weekly",
     "priority": "0.8"
   },
-
   {
     "loc": "https://mulchcancer.com/assets/page/es/mulchcenter_wood-dust-summary.html",
     "changefreq": "monthly",
