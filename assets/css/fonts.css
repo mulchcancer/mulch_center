@@ -1,0 +1,49 @@
+/*---------------------------------------
+  SELF-HOSTED FONTS
+-----------------------------------------*/
+
+/* fatima */
+@font-face {
+  font-family: 'fatima';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fatima-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'fatima';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/fatima-medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'fatima';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/fatima-bold.woff2') format('woff2');
+}
+
+/* fatima */
+@font-face {
+  font-family: 'fatima';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/fatima-black.woff2') format('woff2');
+}
+
+/*---------------------------------------
+  USAGE EXAMPLES
+-----------------------------------------*/
+body, p, ul li, a, button {
+  font-family: 'fatima', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.header_tag_line, .clinica_ped, .navbar-brand-text, .fatima_brand {
+  font-family: 'fatima', sans-serif;
+}
