@@ -24,3 +24,18 @@
 .lni-menu-hamburger-1::before {
   content: "\eb55";
 }
+.lni-xmark::before {
+  content: "\ec52";
+}
+.lni-globe-1::before {
+  content: "\eafb";
+}
+.lni-hospital-2::before {
+  content: "\eb1a";
+}
+.lni-info::before {
+  content: "\eb21";
+}
+.lni-briefcase-1::before {
+  content: "\ea57";
+}
