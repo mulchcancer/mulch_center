@@ -8,7 +8,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/fatima-regular.woff2') format('woff2');
+  src: url('/assets/fonts/fatima-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/fatima-medium.woff2') format('woff2');
+  src: url('/assets/fonts/fatima-medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -24,7 +24,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/fatima-bold.woff2') format('woff2');
+  src: url('/assets/fonts/fatima-bold.woff2') format('woff2');
 }
 
 /* fatima */
@@ -33,7 +33,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url('/fonts/fatima-black.woff2') format('woff2');
+  src: url('/assets/fonts/fatima-black.woff2') format('woff2');
 }
 
 /*---------------------------------------
