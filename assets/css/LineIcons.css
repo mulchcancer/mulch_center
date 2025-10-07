@@ -21,6 +21,6 @@
   line-height: 1;
   color: rgba(230, 0, 0, 0.959);
 }
-.lni-user::before {
-    content: "\e602"; 
+.lni-menu-hamburger-1::before {
+  content: "\eb55";
 }
