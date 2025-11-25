@@ -3,8 +3,8 @@
 
 <svg
    width="376.71075mm"
-   height="210.39496mm"
-   viewBox="0 0 376.71076 210.39495"
+   height="235.21793mm"
+   viewBox="0 0 376.71076 235.21792"
    version="1.1"
    id="svg196124"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -24,8 +24,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.7442569"
-     inkscape:cx="780.64443"
-     inkscape:cy="382.93229"
+     inkscape:cx="796.76789"
+     inkscape:cy="490.42206"
      inkscape:window-width="1920"
      inkscape:window-height="1012"
      inkscape:window-x="0"
@@ -40,83 +40,98 @@
      id="layer1"
      transform="translate(41.575014,184.55579)">
     <g
-       id="g924"
-       transform="matrix(0.88878421,0,0,1,22.161373,0)">
+       id="g21312">
       <g
-         id="g271282">
-        <path
-           d="M -70.10381,-57.514186 H 57.242663 L 77.140538,-16.21662 57.242663,25.080946 H -70.10381 l 18.902989,-41.297566 z"
-           stroke-width="1.38239"
-           stroke="#a5ba7c"
-           fill="#dde4ce"
-           fill-rule="evenodd"
-           id="path196272" />
-        <path
-           d="M 71.681509,-57.28555 H 313.12353 l 37.72532,41.087707 -37.72532,41.08771 H 71.681509 l 35.839041,-41.08771 z"
-           stroke-width="1.89862"
-           stroke="#637d33"
-           fill="#b6cc90"
-           fill-rule="evenodd"
-           id="path196281" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;inline-size:140.241;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.70093"
-           x="-71.170815"
-           y="-5.9353571"
-           id="text200670"
-           transform="matrix(0.94255081,0,0,1.643568,16.691276,-17.12142)"><tspan
+         id="g924"
+         transform="matrix(0.88878421,0,0,1,22.161373,0)">
+        <g
+           id="g271282">
+          <path
+             d="M -70.10381,-57.514186 H 57.242663 L 77.140538,-16.21662 57.242663,25.080946 H -70.10381 l 18.902989,-41.297566 z"
+             stroke-width="1.38239"
+             stroke="#a5ba7c"
+             fill="#dde4ce"
+             fill-rule="evenodd"
+             id="path196272" />
+          <path
+             d="M 71.681509,-57.28555 H 313.12353 l 37.72532,41.087707 -37.72532,41.08771 H 71.681509 l 35.839041,-41.08771 z"
+             stroke-width="1.89862"
+             stroke="#637d33"
+             fill="#b6cc90"
+             fill-rule="evenodd"
+             id="path196281" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;inline-size:140.241;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.70093"
              x="-71.170815"
              y="-5.9353571"
-             id="tspan945">Airborne 
+             id="text200670"
+             transform="matrix(0.94255081,0,0,1.643568,16.691276,-17.12142)"><tspan
+               x="-71.170815"
+               y="-5.9353571"
+               id="tspan21336">Airborne 
 </tspan><tspan
-             x="-71.170815"
-             y="18.759143"
-             id="tspan947">wood dust</tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:22.4514px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.20274"
-           x="159.65111"
-           y="-18.170858"
-           id="text220958"
-           transform="scale(0.68121666,1.4679617)"><tspan
-             id="tspan220956"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.4514px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.20274"
+               x="-71.170815"
+               y="18.759143"
+               id="tspan21338">wood dust</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:22.4514px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.20274"
              x="159.65111"
              y="-18.170858"
-             sodipodi:role="line">People breathe in air </tspan><tspan
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.4514px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.20274"
-             x="159.65111"
-             y="9.8933926"
-             id="tspan235230"
-             sodipodi:role="line">that contains wood dust</tspan></text>
-      </g>
-      <g
-         id="g908">
+             id="text220958"
+             transform="scale(0.68121666,1.4679617)"><tspan
+               id="tspan220956"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.4514px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.20274"
+               x="159.65111"
+               y="-18.170858"
+               sodipodi:role="line">People breathe in air </tspan><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.4514px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.20274"
+               x="159.65111"
+               y="9.8933926"
+               id="tspan235230"
+               sodipodi:role="line">that contains wood dust</tspan></text>
+        </g>
+        <g
+           id="g908">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:124.133px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.45468"
+             x="-76.214478"
+             y="-100.94255"
+             id="text3032"
+             transform="scale(1.0320251,0.96896868)"><tspan
+               sodipodi:role="line"
+               id="tspan3030"
+               style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:124.133px;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ff0000;stroke-width:1.45468"
+               x="-76.214478"
+               y="-100.94255">MULCH</tspan></text>
+        </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:124.133px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.45468"
-           x="-76.214478"
-           y="-100.94255"
-           id="text3032"
-           transform="scale(1.0320251,0.96896868)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:40.5331px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.01332"
+           x="-74.734001"
+           y="-59.478996"
+           id="text28246"
+           transform="scale(0.95715949,1.044758)"><tspan
              sodipodi:role="line"
-             id="tspan3030"
-             style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:124.133px;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ff0000;stroke-width:1.45468"
-             x="-76.214478"
-             y="-100.94255">MULCH</tspan></text>
+             id="tspan28244"
+             style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ffffff;stroke-width:1.01332"
+             x="-74.734001"
+             y="-59.478996">PRODUCTION CENTERS</tspan></text>
       </g>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:40.5331px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.01332"
-         x="-74.734001"
-         y="-59.478996"
-         id="text28246"
-         transform="scale(0.95715949,1.044758)"><tspan
+         style="font-style:normal;font-weight:normal;font-size:18.5354px;line-height:3.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.386155"
+         x="-63.161613"
+         y="33.155727"
+         id="text2355"
+         transform="scale(0.65962861,1.5160046)"><tspan
            sodipodi:role="line"
-           id="tspan28244"
-           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy';fill:#ffffff;stroke-width:1.01332"
-           x="-74.734001"
-           y="-59.478996">PRODUCTION CENTERS</tspan></text>
+           id="tspan2353"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.5354px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.386155"
+           x="-63.161613"
+           y="33.155727">WOOD DUST AS ASBESTOS IS A GROUP 1 CARCINOGEN</tspan></text>
     </g>
   </g>
 </svg>
